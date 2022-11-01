@@ -13,6 +13,7 @@ set smartindent
 set noexpandtab
 set splitbelow
 set cursorline
+set termguicolors
 set bg=dark
 set clipboard=unnamedplus
 set scrolloff=5
@@ -24,7 +25,7 @@ set laststatus=2
 set encoding=utf-8
 set updatetime=300
 set signcolumn=yes
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:\|
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:\_
 set list
 filetype plugin on
 syntax on
@@ -60,14 +61,20 @@ Plug 'tabnine/YouCompleteMe', {'do': './install.py --all'} "We all know tabnine 
 Plug 'mattn/emmet-vim' "Html without emmet is like hamburger without ham
 Plug 'morhetz/gruvbox' "My favourite theme
 "Plug 'neoclide/coc.nvim', {'branch': 'release'} "Who doesn't use coc these days??
+" .... well apparently I don't
 
 call plug#end()
 
 " Gruvbox theme
-let g:gruvbox_italic = '1'
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_transparent_bg = '1'
-autocmd vimenter * ++nested colorscheme gruvbox
+"autocmd vimenter * ++nested colorscheme gruvbox
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
+""hi! Normal ctermbg=NONE guibg=NONE
+""hi! NonText ctermbg=NONE guibg=NONE
+
+
 
 
 
