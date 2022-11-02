@@ -48,8 +48,8 @@ inoremap [] []
 inoremap {} {}
 
 " Personal remaps
-inoremap <C-i> <Esc>
-tnoremap <C-i> <C-\><C-n>
+inoremap <C-j> <Esc>
+tnoremap <C-j> <C-\><C-n>
 inoremap <leader>ff <Esc>:tabnew +Ex<Cr>
 nnoremap <leader>ff :tabnew +Ex<Cr>
 inoremap <leader>cc <C-X><C-O>
