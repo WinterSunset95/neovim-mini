@@ -48,8 +48,8 @@ inoremap [] []
 inoremap {} {}
 
 " Personal remaps
-imap ii <Esc>
-tmap <Esc> <C-\><C-n>
+inoremap <C-i> <Esc>
+tnoremap <C-i> <C-\><C-n>
 inoremap <leader>ff <Esc>:tabnew +Ex<Cr>
 nnoremap <leader>ff :tabnew +Ex<Cr>
 inoremap <leader>cc <C-X><C-O>
@@ -60,8 +60,8 @@ call plug#begin()
 Plug 'tabnine/YouCompleteMe', {'do': './install.py --all'} "We all know tabnine rocks
 Plug 'mattn/emmet-vim' "Html without emmet is like hamburger without ham
 Plug 'morhetz/gruvbox' "My favourite theme
-"Plug 'neoclide/coc.nvim', {'branch': 'release'} "Who doesn't use coc these days??
-" .... well apparently I don't
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "Who doesn't use coc these days??
+" Coc plugins I use: coc-tsserver, coc-prettier
 
 call plug#end()
 
