@@ -34,22 +34,22 @@ filetype indent on
 let g:mapleader=' '
 
 " Auto-close certain characters
-inoremap ' ''<left>
-inoremap " ""<left>
-inoremap { {}<left>
-inoremap [ []<left>
-inoremap ( ()<left>
-inoremap {<CR> {<CR><BS>}<Esc>O
-inoremap '' ''
-inoremap "" ""
-inoremap () ()
-inoremap {} {}
-inoremap [] []
-inoremap {} {}
+"inoremap ' ''<left>
+"inoremap " ""<left>
+"inoremap { {}<left>
+"inoremap [ []<left>
+"inoremap ( ()<left>
+"inoremap {<CR> {<CR><BS>}<Esc>O
+"inoremap '' ''
+"inoremap "" ""
+"inoremap () ()
+"inoremap {} {}
+"inoremap [] []
+"inoremap {} {}
 
 " Personal remaps
-inoremap <C-j> <Esc>
-tnoremap <C-j> <C-\><C-n>
+inoremap jj <Esc>
+tnoremap jj <C-\><C-n>
 inoremap <leader>ff <Esc>:tabnew +Ex<Cr>
 nnoremap <leader>ff :tabnew +Ex<Cr>
 inoremap <leader>cc <C-X><C-O>
