@@ -61,6 +61,7 @@ Plug 'tabnine/YouCompleteMe', {'do': './install.py --all'} "We all know tabnine 
 Plug 'mattn/emmet-vim' "Html without emmet is like hamburger without ham
 Plug 'morhetz/gruvbox' "My favourite theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Who doesn't use coc these days??
+Plug 'github/copilot.vim' "Its copilotttttttt
 " Coc plugins I use: coc-tsserver, coc-prettier
 
 call plug#end()
@@ -74,6 +75,8 @@ colorscheme gruvbox
 ""hi! Normal ctermbg=NONE guibg=NONE
 ""hi! NonText ctermbg=NONE guibg=NONE
 
+" A specific node version for copolit
+let g:copilot_node_command = "~/.nodenv/versions/16.15.0/bin/node"
 
 
 
