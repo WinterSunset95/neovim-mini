@@ -30,22 +30,9 @@ set list
 filetype plugin on
 syntax on
 filetype indent on
+
 " Leader key
 let g:mapleader=' '
-
-" Auto-close certain characters
-"inoremap ' ''<left>
-"inoremap " ""<left>
-"inoremap { {}<left>
-"inoremap [ []<left>
-"inoremap ( ()<left>
-"inoremap {<CR> {<CR><BS>}<Esc>O
-"inoremap '' ''
-"inoremap "" ""
-"inoremap () ()
-"inoremap {} {}
-"inoremap [] []
-"inoremap {} {}
 
 " Personal remaps
 inoremap jj <Esc>
@@ -75,10 +62,11 @@ colorscheme gruvbox
 ""hi! Normal ctermbg=NONE guibg=NONE
 ""hi! NonText ctermbg=NONE guibg=NONE
 
-" A specific node version for copolit
+" A specific node version for copilot
 let g:copilot_node_command = "~/.nodenv/versions/16.15.0/bin/node"
 
-
+" Emmet
+let g:emmet_leader_key = '<C-,>'
 
 
 
