@@ -66,7 +66,7 @@ colorscheme gruvbox
 let g:copilot_node_command = "~/.nodenv/versions/16.15.0/bin/node"
 
 " Emmet
-let g:emmet_leader_key = '<C-,>'
+let g:user_emmet_leader_key = '<C-,>'
 
 
 
