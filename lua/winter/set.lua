@@ -19,7 +19,7 @@ vim.opt.wrap = false
 
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 
 vim.opt.scrolloff = 10
 
