@@ -37,4 +37,6 @@ vim.keymap.set("i", "{}", "{}")
 vim.keymap.set("i", "``", "``")
 vim.keymap.set("i", "<>", "<>")
 
+vim.keymap.set("i", "```", "``````<left><left><left>")
+
 vim.keymap.set("i", "{<cr>", "{<cr>}<esc>O")
