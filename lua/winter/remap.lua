@@ -1,15 +1,7 @@
-
-
-
-
-
-
 vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set('t', 'jj', '<C-\\><C-n>')
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("i", "<leader>L", "<right>")
-vim.keymap.set("i", "<leader>H", "<left>")
 
 vim.keymap.set("n", "<C-j>", "<C-d>")
 vim.keymap.set("n", "<C-k>", "<C-u>")
@@ -40,3 +32,6 @@ vim.keymap.set("i", "<>", "<>")
 vim.keymap.set("i", "```", "``````<left><left><left>")
 
 vim.keymap.set("i", "{<cr>", "{<cr>}<esc>O")
+
+vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? "<C-y>" : "<CR>"', { noremap = true, expr = true })
+--vim.keymap.set("i", "<CR>", 'pumvisible () ? "<C-y> ":"<CR>"')
