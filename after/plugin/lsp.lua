@@ -64,6 +64,19 @@ lspconfig.jdtls.setup {
   cmd = { 'jdtls' },
   capabilities = capabilities,
 }
+-- Golang --
+lspconfig.gopls.setup {
+  cmd = { 'gopls', 'serve' },
+  capabilities = capabilities,
+  settings = {
+	gopls = {
+	  analyses = {
+		unusedparams = true,
+	  },
+	  staticcheck = true,
+	},
+  },
+}
 
 
 -- Global mappings.
