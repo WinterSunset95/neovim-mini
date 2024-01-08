@@ -9,12 +9,6 @@ return require('packer').startup(function(use)
 	use 'github/copilot.vim'
 	-- Lsp stuff
 	use {'neoclide/coc.nvim', branch = 'release'}
-	-- It's a duck
-	use {
-		'tamton-aquib/duck.nvim',
-		config = function()
-			vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
-			vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
-		end
-	}
+	-- Treesitter bois
+	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 end)
