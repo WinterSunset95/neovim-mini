@@ -9,6 +9,6 @@ return require('packer').startup(function(use)
 	use 'github/copilot.vim'
 	-- Lsp stuff
 	use {'neoclide/coc.nvim', branch = 'release'}
-	-- Treesitter bois
+	-- Who doesn't like treesitter
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 end)
