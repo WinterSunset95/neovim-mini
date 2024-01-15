@@ -20,10 +20,10 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set('t', 'jj', '<C-\\><C-n>')
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><leader>", ":b#<CR>")
+vim.keymap.set("n", "<leader>w", "<C-w>w")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set('n', '<F8>', ':lua build()<cr>')
-
-vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? coc#pum#confirm() : "<CR>"', { noremap = true, expr = true })
