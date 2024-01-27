@@ -11,4 +11,6 @@ return require('packer').startup(function(use)
 	use {'neoclide/coc.nvim', branch = 'release'}
 	-- Who doesn't like treesitter
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	-- Which key to press next?
+	use { "folke/which-key.nvim" }
 end)
