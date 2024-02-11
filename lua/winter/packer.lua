@@ -13,4 +13,15 @@ return require('packer').startup(function(use)
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	-- Which key to press next?
 	use { "folke/which-key.nvim" }
+	-- Smoooth scrolling
+	use 'karb94/neoscroll.nvim'
+	-- I want offline devdocs
+	use {
+		"luckasRanarison/nvim-devdocs",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	}
 end)
