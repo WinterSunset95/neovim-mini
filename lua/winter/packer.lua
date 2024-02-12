@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
 	-- Which key to press next?
 	use { "folke/which-key.nvim" }
 	-- Smoooth scrolling
-	use 'karb94/neoscroll.nvim'
+	use "echasnovski/mini.animate"
 	-- I want offline devdocs
 	use {
 		"luckasRanarison/nvim-devdocs",
