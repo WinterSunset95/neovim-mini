@@ -9,18 +9,8 @@ require('telescope').setup({
 		  prompt_position = "top",
 		},
 		file_ignore_patterns = {
-			"*.xpm",
-			"*.ico",
-			"*.png",
-			"*.jpg",
-			"*.jpeg",
-			"*.gif",
-			"*.svg",
-			"*.ttf",
-			"*.otf",
-			"*.woff",
-			"*.woff2",
-			"*.xcf"
+			"src/assets/.*",
+			"build/.*"
 		},
 	}
 })
