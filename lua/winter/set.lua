@@ -9,7 +9,7 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.completeopt = "menu,menuone,noinsert"
 vim.opt.foldmethod = "indent"
-vim.opt.mouse = "r"
+vim.opt.mouse = "a"
 
 vim.opt.wrap = false
 
@@ -19,5 +19,4 @@ vim.opt.scrolloff = 10
 
 vim.opt.list = true
 --vim.opt.listchars = { space = '_', tab = '>~', eol = '↵' }
---vim.opt.foldcolumn = "8"
-
+vim.opt.foldcolumn = "0"
