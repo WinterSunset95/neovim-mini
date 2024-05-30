@@ -7,14 +7,10 @@ return require('packer').startup(function(use)
 	use 'morhetz/gruvbox'
 	-- Been quite useful for me
 	use 'github/copilot.vim'
-	-- Lsp stuff
-	use {'neoclide/coc.nvim', branch = 'release'}
 	-- Who doesn't like treesitter
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	-- Which key to press next?
 	use { "folke/which-key.nvim" }
-	-- Smoooth scrolling
-	use "echasnovski/mini.animate"
 	-- I want offline devdocs
 	use {
 		"luckasRanarison/nvim-devdocs",
@@ -24,4 +20,23 @@ return require('packer').startup(function(use)
 			"nvim-treesitter/nvim-treesitter",
 		},
 	}
+
+	-- Next we configure lsp
+	use 'neovim/nvim-lspconfig'
+	use 'williamboman/mason.nvim'
+	-- Extra lsp features
+	-- Lua
+	use 'folke/neodev.nvim'
+	-- Rust analyzer
+	use 'vxpm/ferris.nvim'
+	-- Typescript
+	use {
+		"pmizio/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		config = function()
+			require("typescript-tools").setup {}
+		end,
+	}
+	-- Clangd
+	use 'p00f/clangd_extensions.nvim'
 end)
