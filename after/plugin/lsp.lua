@@ -16,6 +16,8 @@ local servers = {
 	"phpactor",
 	"svelte",
 	"emmet_language_server",
+	"cssls",
+	"cssmodules_ls"
 }
 
 -- Servers setup
