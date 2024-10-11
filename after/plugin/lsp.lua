@@ -63,21 +63,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local opts = { buffer = ev.buf }
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 		-- For declaration, definition and type_definition, open in a new tab
-		vim.keymap.set('n', 'gD', function()
+		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+		vim.keymap.set('n', 'D', vim.lsp.buf.type_definition, opts)
+		vim.keymap.set('n', 'tD', function()
 			vim.lsp.buf.declaration()
 			--vim.cmd('tabnew')
 		end, opts)
-		vim.keymap.set('n', 'gd', function()
+		vim.keymap.set('n', 'td', function()
 			vim.lsp.buf.definition()
 			--vim.cmd('tabnew')
 		end, opts)
-		vim.keymap.set('n', 'D', function()
+		vim.keymap.set('n', 'T', function()
 			vim.lsp.buf.type_definition()
 			--vim.cmd('tabnew')
 		end, opts)
-		-- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-		-- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-		-- vim.keymap.set('n', 'D', vim.lsp.buf.type_definition, opts)
 	end,
 })
 
