@@ -17,6 +17,7 @@ local servers = {
 	"svelte",
 	"cssls",
 	"cssmodules_ls",
+	"tailwindcss",
 }
 
 -- Servers setup
