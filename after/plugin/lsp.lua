@@ -9,6 +9,7 @@ local cmp = require('cmp')
 local servers = {
 	"pyright",
 	"tsserver",
+	"denols",
 	"clangd",
 	"lua_ls",
 	"gopls",
@@ -24,6 +25,7 @@ local servers = {
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
 		capabilities = capabilities,
+		autostart = false
 	})
 end
 
