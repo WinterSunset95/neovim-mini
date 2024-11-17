@@ -8,7 +8,6 @@ local luasnip = require('luasnip')
 local cmp = require('cmp')
 local servers = {
 	"pyright",
-	"tsserver",
 	"denols",
 	"clangd",
 	"lua_ls",
@@ -16,18 +15,45 @@ local servers = {
 	"rust_analyzer",
 	"phpactor",
 	"svelte",
-	"emmet_language_server",
 	"cssls",
-	"cssmodules_ls"
+	"cssmodules_ls",
 }
 
 -- Servers setup
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
 		capabilities = capabilities,
-		autostart = false
+		autostart = false,
 	})
 end
+
+-- Typescript and Vue
+--lspconfig.tsserver.setup({})
+lspconfig.ts_ls.setup({
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = "/home/autumn/.config/yarn/global/node_modules/@vue/typescript-plugin",
+				languages = {"javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "json"},
+			},
+		},
+	},
+	filetypes = {
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+		"vue",
+		"json",
+	},
+	autostart = false,
+})
+
+lspconfig.volar.setup({
+	filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+	autostart = false,
+})
 
 -- C
 lspconfig.clangd.setup({
@@ -47,15 +73,35 @@ lspconfig.rust_analyzer.setup({
 
 -- emmet_language_server
 lspconfig.emmet_language_server.setup({
+	filetypes = { "css", "eruby", "html", "vue", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
+	-- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
+	-- **Note:** only the options listed in the table are supported.
 	init_options = {
-		showSuggestionsAsSnippets = true,
-	}
+		---@type table<string, string>
+		includeLanguages = {},
+		--- @type string[]
+		excludeLanguages = {},
+		--- @type string[]
+		extensionsPath = {},
+		--- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
+		preferences = {},
+		--- @type boolean Defaults to `true`
+		showAbbreviationSuggestions = true,
+		--- @type "always" | "never" Defaults to `"always"`
+		showExpandedAbbreviation = "always",
+		--- @type boolean Defaults to `false`
+		showSuggestionsAsSnippets = false,
+		--- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
+		syntaxProfiles = {},
+		--- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
+		variables = {},
+	},
 })
+
 vim.keymap.set({ 'n', 'v' }, '<C-y>', require('nvim-emmet').wrap_with_abbreviation)
 
 -- Remaps when the lspservers are attached
 vim.api.nvim_create_autocmd('LspAttach', {
-	print("Hello"),
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	callback = function(ev)
 		-- Enable completion triggered by <c-x><c-o>

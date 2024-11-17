@@ -22,9 +22,9 @@ require("nvim-devdocs").setup({
 		open_in_browser = ""
 	  },
 	  ensure_installed = {
-		  "golang",
+		  "go",
+		  "gcc-13",
 		  "rust",
-		  "typescript"
 	  }, -- get automatically installed
 	  after_open = function(bufnr) end, -- callback that runs after the Devdocs window is opened. Devdocs buffer ID will be passed in
 	}

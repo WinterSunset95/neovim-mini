@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
 	-- The only theme I like
 	use 'morhetz/gruvbox'
 	-- Been quite useful for me
-	use 'github/copilot.vim'
+	-- use 'github/copilot.vim'
 	-- Who doesn't like treesitter
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	-- Which key to press next?
