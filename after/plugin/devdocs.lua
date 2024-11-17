@@ -21,7 +21,11 @@ require("nvim-devdocs").setup({
 	  mappings = { -- keymaps for the doc buffer
 		open_in_browser = ""
 	  },
-	  ensure_installed = {}, -- get automatically installed
+	  ensure_installed = {
+		  "golang",
+		  "rust",
+		  "typescript"
+	  }, -- get automatically installed
 	  after_open = function(bufnr) end, -- callback that runs after the Devdocs window is opened. Devdocs buffer ID will be passed in
 	}
 )
