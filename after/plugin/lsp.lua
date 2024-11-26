@@ -18,6 +18,8 @@ local servers = {
 	"cssls",
 	"cssmodules_ls",
 	"tailwindcss",
+	"cmake",
+	"djlsp"
 }
 
 -- Servers setup
