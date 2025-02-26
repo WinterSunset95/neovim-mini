@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- The only theme I like
 	use 'morhetz/gruvbox'
+	use 'folke/tokyonight.nvim'
 	-- Been quite useful for me
 	-- use 'github/copilot.vim'
 	-- Who doesn't like treesitter
@@ -47,4 +48,8 @@ return require('packer').startup(function(use)
 	use 'p00f/clangd_extensions.nvim'
 	-- Emmet 
 	use 'olrtg/nvim-emmet'
+
+	-- For YUCK files
+	use 'elkowar/yuck.vim'
+
 end)
