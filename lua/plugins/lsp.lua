@@ -3,10 +3,6 @@ return {
     "neovim/nvim-lspconfig",
   },
   {
-    "folke/neodev.nvim",
-    opts = {},
-  },
-  {
     "p00f/clangd_extensions.nvim",
     opts = {},
   },
