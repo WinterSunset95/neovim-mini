@@ -7,19 +7,22 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 local servers = {
-	"pyright",
 	"denols",
-	"clangd",
+	"svelte",
+}
+
+local serversAutostart = {
+	"phpactor",
+	"pyright",
 	"lua_ls",
 	"gopls",
-	"rust_analyzer",
-	"phpactor",
-	"svelte",
+	"clangd",
 	"cssls",
 	"cssmodules_ls",
 	"tailwindcss",
 	"cmake",
-	"djlsp"
+	"djlsp",
+  "rust_analyzer"
 }
 
 -- Servers setup
@@ -28,6 +31,13 @@ for _, server in ipairs(servers) do
 		capabilities = capabilities,
 		autostart = false,
 	})
+end
+
+for _, server in ipairs(serversAutostart) do
+  lspconfig[server].setup({
+    capabilities = capabilities,
+    autostart = true,
+  })
 end
 
 -- Typescript and Vue
@@ -61,17 +71,6 @@ lspconfig.volar.setup({
 -- C
 lspconfig.clangd.setup({
 	cmd = { "clangd", "--background-index", "--suggest-missing-includes", "--clang-tidy", "--offset-encoding=utf-16" },
-})
-
--- Rust
-lspconfig.rust_analyzer.setup({
-	settings = {
-		['rust-analyzer'] = {
-			diagnostics = {
-				enable = false;
-			}
-		}
-	}
 })
 
 -- emmet_language_server

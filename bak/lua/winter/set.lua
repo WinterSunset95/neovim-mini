@@ -21,3 +21,5 @@ vim.opt.scrolloff = 10
 vim.opt.list = true
 --vim.opt.listchars = { space = '_', tab = '>~', eol = '↵' }
 vim.opt.foldcolumn = "0"
+
+vim.g.lazyvim_check_order = false

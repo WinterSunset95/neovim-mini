@@ -26,4 +26,4 @@ vim.keymap.set("n", "<leader>w", "<C-w>w")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set('n', '<F8>', ':lua build()<cr>')
+-- vim.keymap.set('n', '<F8>', ':lua build()<cr>')

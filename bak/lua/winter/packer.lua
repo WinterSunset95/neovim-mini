@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
 	}
 	-- Clangd
 	use 'p00f/clangd_extensions.nvim'
+
 	-- Emmet 
 	use 'olrtg/nvim-emmet'
 
@@ -59,4 +60,12 @@ return require('packer').startup(function(use)
 	-- Latex
 	use 'lervag/vimtex'
 
+  -- For markdown
+  use 'OXY2DEV/markview.nvim'
+
+  -- Snacks
+  use 'folke/snacks.nvim'
+
+  -- Bufferline
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 end)

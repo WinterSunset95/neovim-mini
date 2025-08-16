@@ -1,3 +1,2 @@
-require('winter.set')
-require('winter.remaps')
-require('winter.packer')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
