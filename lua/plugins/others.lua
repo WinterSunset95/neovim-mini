@@ -1,13 +1,26 @@
 return {
   {
     'morhetz/gruvbox',
-    opts = {}
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
   },
   {
     'folke/tokyonight.nvim',
-    config = function()
-      vim.cmd("colorscheme tokyonight-night")
-      vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-    end
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+    --config = function()
+    --  vim.cmd("colorscheme tokyonight")
+    --  vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+    --end
   },
 }
