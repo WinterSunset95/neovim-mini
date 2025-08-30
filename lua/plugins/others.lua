@@ -1,13 +1,6 @@
 return {
   {
     'morhetz/gruvbox',
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
   },
   {
     'folke/tokyonight.nvim',

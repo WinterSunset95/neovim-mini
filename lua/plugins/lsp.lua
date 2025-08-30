@@ -1,10 +1,26 @@
 return {
   {
     'neovim/nvim-lspconfig',
+    opts = {
+      inlay_hint = { enabled = true },
+      setup = {
+        clangd = function(_, opts)
+          local clangd_opts = require("lazyvim.util").opts("clangd_extensions.nvim")
+          require("clangd_extensions").setup(vim.tbl_deep_extend("force", clangd_opts, opts))
+        end,
+      }
+    },
+    config = function()
+      LazyVim.lsp.setup()
+      LazyVim.lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
+        print("Enabling inlay hints for " .. client.name)
+        vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
+        print("Enabled inlay hints buffer number: " .. buffer)
+      end)
+    end
   },
   {
     'folke/neodev.nvim',
-    opts = {}
   },
   {
     'p00f/clangd_extensions.nvim',
