@@ -13,10 +13,11 @@ return {
     'github/copilot.vim',
     config = function()
       vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("\\<CR>")', { silent = true, expr = true, replace_keycodes = false })
-      vim.api.nvim_set_keymap("i", "<C-K>", 'copilot#CycleCompletions(1)', { silent = true, expr = true, replace_keycodes = false })
-      vim.api.nvim_set_keymap("i", "<C-L>", 'copilot#CycleCompletions(-1)', { silent = true, expr = true, replace_keycodes = false })
-      vim.api.nvim_set_keymap("i", "<C-U>", 'copilot#Clear()', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<c-j>", 'copilot#Accept()', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<c-;>", 'copilot#CycleCompletions(1)', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<c-,>", 'copilot#CycleCompletions(-1)', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<c-u>", 'copilot#Clear()', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<c-l>", 'copilot#Accept("\\<CR>")', { silent = true, expr = true, replace_keycodes = false })
     end,
   },
   {
