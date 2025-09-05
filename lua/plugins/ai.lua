@@ -11,12 +11,13 @@ return {
   },
   {
     'github/copilot.vim',
-    config = function ()
-      vim.keymap.set('i', '<Tab>', function() return vim.fn['copilot#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-;>', function() return vim.fn['copilot#CycleNext']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-,>', function() return vim.fn['copilot#CyclePrevious']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['copilot#Clear']() end, { expr = true, silent = true })
-    end
+    config = function()
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("\\<CR>")', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<C-K>", 'copilot#CycleCompletions(1)', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<C-L>", 'copilot#CycleCompletions(-1)', { silent = true, expr = true, replace_keycodes = false })
+      vim.api.nvim_set_keymap("i", "<C-U>", 'copilot#Clear()', { silent = true, expr = true, replace_keycodes = false })
+    end,
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
