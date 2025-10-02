@@ -1,5 +1,5 @@
 -- Building the function for building and compiling
-function build()
+local function build()
 	local altbuf = vim.fn.bufnr('#')
 	local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
 	if (filetype=="c" or filetype=="cpp") then
@@ -19,11 +19,13 @@ end
 vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set('t', 'jj', '<C-\\><C-n>')
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader><leader>", ":b#<CR>")
-vim.keymap.set("n", "<leader>w", "<C-w>w")
+vim.keymap.set("n", "<leader>w", "<C-w>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- vim.keymap.set('n', '<F8>', ':lua build()<cr>')
+vim.keymap.set("n", "H", ":bprev<CR>")
+vim.keymap.set("n", "L", ":bnext<CR>")
+
+vim.keymap.set('n', '<F8>', build)

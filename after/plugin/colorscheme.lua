@@ -1,3 +1,6 @@
+vim.cmd("colorscheme tokyonight")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+
 return {
   {
     'morhetz/gruvbox',

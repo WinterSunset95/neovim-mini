@@ -1,3 +1,5 @@
+vim.g.codeium_disable_bindings = 1
+
 vim.opt.nu = false
 vim.opt.relativenumber = false
 vim.opt.autoindent = true
@@ -18,7 +20,7 @@ vim.opt.incsearch = true
 
 vim.opt.scrolloff = 10
 
-vim.opt.list = true
+--vim.opt.list = true
 --vim.opt.listchars = { space = '_', tab = '>~', eol = '↵' }
 vim.opt.foldcolumn = "0"
 
