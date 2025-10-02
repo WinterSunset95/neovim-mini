@@ -41,4 +41,14 @@ return require('packer').startup(function(use)
     'folke/lazydev.nvim',
     after = 'lspconfig',
   }
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+  use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+  }
 end)
