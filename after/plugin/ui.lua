@@ -17,25 +17,8 @@ lualine.setup({
 
 -- Harpoon
 harpoon:setup()
-local conf = require("telescope.config").values
-local function toggle_telescope(harpoon_files)
-    local file_paths = {}
-    for _, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, item.value)
-    end
 
-    require("telescope.pickers").new({}, {
-        prompt_title = "Harpoon",
-        finder = require("telescope.finders").new_table({
-            results = file_paths,
-        }),
-        previewer = conf.file_previewer({}),
-        sorter = conf.generic_sorter({}),
-    }):find()
-end
-
-vim.keymap.set("n", "<leader>hh", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" })
+vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Open harpoon window" })
 vim.keymap.set("n", "<leader>a", function ()
   harpoon:list():add()
 end)
@@ -71,3 +54,13 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.wo.foldenable = false
   end
 })
+
+-- vim-tmux-navigator
+local nvim_set_keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+-- Tmux navigation
+nvim_set_keymap('n', '<C-h>', '<cmd>TmuxNavigateLeft<CR>', opts)
+nvim_set_keymap('n', '<C-j>', '<cmd>TmuxNavigateDown<CR>', opts)
+nvim_set_keymap('n', '<C-k>', '<cmd>TmuxNavigateUp<CR>', opts)
+nvim_set_keymap('n', '<C-l>', '<cmd>TmuxNavigateRight<CR>', opts)
