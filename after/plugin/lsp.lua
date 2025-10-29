@@ -20,6 +20,9 @@ vim.lsp.enable('jsonls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('emmet_language_server')
 vim.lsp.enable('tailwindcss')
+vim.lsp.enable('ltex')
+vim.lsp.enable('ltex_plus')
+vim.lsp.enable('texlab')
 
 require('lazydev').setup({
   library = {
