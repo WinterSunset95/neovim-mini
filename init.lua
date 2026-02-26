@@ -1,3 +1,3 @@
 require("winter.remaps")
 require("winter.set")
-require("winter.packer")
+require("config.lazy")
