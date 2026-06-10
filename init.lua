@@ -1,3 +1,5 @@
+require("config.lazy")
 require("winter.remaps")
 require("winter.set")
-require("config.lazy")
+require("winter.python")
+require("winter.autocmds")
