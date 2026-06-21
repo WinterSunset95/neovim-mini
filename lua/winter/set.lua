@@ -1,6 +1,3 @@
-vim.g.codeium_disable_bindings = 1
-vim.g.vimtex_view_method = "zathura"
-
 vim.opt.nu = false
 vim.opt.relativenumber = false
 vim.opt.autoindent = true

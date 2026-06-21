@@ -67,6 +67,7 @@ return {
       { '<leader>fd', '<cmd>Telescope diagnostics<cr>', { desc = 'Telescope diagnostics' } },
       { '<leader>fl', '<cmd>Telescope lsp_references<cr>', { desc = 'Telescope lsp references' } },
       { '<leader>fr', '<cmd>Telescope registers<cr>', { desc = 'Telescope lsp references' } },
+      { '<leader>fg', '<cmd>Telescope grep_string<cr>', { desc = 'Telescope grep through the project' } },
     },
   },
   {

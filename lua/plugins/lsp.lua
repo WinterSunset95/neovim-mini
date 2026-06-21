@@ -1,5 +1,11 @@
 return {
-  { 'lervag/vimtex' },
+  {
+    'lervag/vimtex',
+    lazy = false,
+    init = function ()
+      vim.g.vimtex_view_method = "zathura"
+    end
+  },
   {
     "mason-org/mason.nvim",
     opts = {}
@@ -22,6 +28,15 @@ return {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
+  },
+  {
+    'nvim-flutter/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
   },
   {
     'neovim/nvim-lspconfig',
