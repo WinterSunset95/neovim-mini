@@ -7,10 +7,6 @@ return {
     end
   },
   {
-    "mason-org/mason.nvim",
-    opts = {}
-  },
-  {
     'JoosepAlviste/nvim-ts-context-commentstring',
     opts = {}
   },
@@ -40,10 +36,6 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
-    dependencies = {
-      "mason.nvim",
-      { "mason-org/mason-lspconfig.nvim", config = function() end },
-    },
     config = function()
       -- 1. Configure lua_ls
       vim.lsp.config('lua_ls', {
@@ -56,8 +48,13 @@ return {
         }
       })
 
+      local svelte_plugin_path = vim.env.NIX_SVELTE_PLUGIN_PATH
+
+      if not svelte_plugin_path then
+        svelte_plugin_path = vim.fn.stdpath("data") .. "/mason/packages/svelte-language-server/node_modules/typescript-svelte-plugin"
+      end
+
       -- 2. Configure vtsls to recognize Svelte files
-      local svelte_plugin_path = vim.fn.stdpath("data") .. "/mason/packages/svelte-language-server/node_modules/typescript-svelte-plugin"
       vim.lsp.config('vtsls', {
         settings = {
           vtsls = {
@@ -85,9 +82,9 @@ return {
       vim.lsp.enable('emmet_language_server')
       vim.lsp.enable('tailwindcss')
       vim.lsp.enable('ltex')
-      vim.lsp.enable('ltex_plus')
       vim.lsp.enable('texlab')
-      vim.lsp.enable('qmlls')
+      vim.lsp.enable('gopls')
+      -- vim.lsp.enable('qmlls')
       vim.lsp.enable('svelte')
       vim.lsp.enable('vtsls')
       -- Note: ts_ls was removed to prevent conflicts with vtsls
