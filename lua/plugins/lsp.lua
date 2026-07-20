@@ -87,7 +87,8 @@ return {
       -- vim.lsp.enable('qmlls')
       vim.lsp.enable('svelte')
       vim.lsp.enable('vtsls')
-      -- Note: ts_ls was removed to prevent conflicts with vtsls
+
+      vim.lsp.enable('nil_ls')
 
       -- 4. Set up Keymaps and Capability Overrides on Attach
       vim.api.nvim_create_autocmd('LspAttach', {
