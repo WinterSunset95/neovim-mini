@@ -1,9 +1,20 @@
 return {
   {
-    'lervag/vimtex',
-    lazy = false,
-    init = function ()
+    "lervag/vimtex",
+    lazy = false, -- Vimtex should not be lazy-loaded, it relies on filetype detection
+    init = function()
+      -- Tell Vimtex to use LuaTeX and allow shell execution
       vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_compiler_latexmk = {
+        options = {
+          "-verbose",
+          "-file-line-error",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-lualatex",
+          "-shell-escape", -- CRITICAL: This fixes the "disabled" error
+        }
+      }
     end
   },
   {
